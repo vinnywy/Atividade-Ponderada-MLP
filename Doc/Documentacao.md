@@ -319,13 +319,23 @@ Três observações relevantes dos resultados:
  
 A melhor configuração (Adam, `alpha=0.001`, `[784, 256, 128, 10]`) foi treinada por 50 épocas, atingindo **98.28%** de acurácia no teste. Isso equivale a 172 erros em 10.000 exemplos.
  
-> Imagem recomendada aqui: curvas de loss e acurácia do treinamento final (imagem 3).
+<div align="center">
+    <strong style="font-size: 18px;"><sub>Curva de Loss e Acurácia Final</sub></strong><br>
+<img src="../Assets/curva_loss.png" width="100%"
+    alt="Título"><br>
+    <sup>Fonte: Desenvolvido Através Google Colab</sup>
+  </div>
  
 A curva de acurácia oscila entre 97.7% e 98.2% a partir da época 10, o que é esperado com Adam — a atualização adaptativa por peso introduz algum ruído nas métricas de validação após a convergência inicial.
  
 ### 7.5 Matriz de confusão e acurácia por dígito
  
-> Imagem recomendada aqui: matriz de confusão (imagem 4).
+<div align="center">
+    <strong style="font-size: 18px;"><sub>Matriz de Confusão</sub></strong><br>
+<img src="../Assets/matriz_confusão.png" width="100%"
+    alt="Título"><br>
+    <sup>Fonte: Desenvolvido Através Google Colab</sup>
+  </div>
  
 | Dígito | Acurácia | Erros totais | Principal confusão |
 |---|---|---|---|
@@ -362,7 +372,7 @@ A distribuição de ativações mostra que 79.8% das ativações da camada ocult
     <sup>Fonte: Desenvolvido Através Google Colab</sup>
   </div>
  
-O PCA da penúltima camada (128 neurônios) reduzido para 2 dimensões explica 16.4% da variância no PC1 e 14.2% no PC2 — total de 30.6%. Apesar de capturar apenas parte da variância, os agrupamentos por dígito são visíveis: o dígito 3 (vermelho) e o dígito 2 (verde) aparecem em regiões distintas e bem separadas. Dígitos com maior confusão na matriz — como 3 e 5 — mostram sobreposição nas regiões intermediárias do gráfico, consistente com os erros observados.
+O PCA da penúltima camada (128 neurônios) reduzido para 2 dimensões explica 16.4% da variância no PC1 e 14.2% no PC2, total de 30.6%. Apesar de capturar apenas parte da variância, os agrupamentos por dígito são visíveis: o dígito 3 (vermelho) e o dígito 2 (verde) aparecem em regiões distintas e bem separadas. Dígitos com maior confusão na matriz, como 3 e 5, mostram sobreposição nas regiões intermediárias do gráfico, consistente com os erros observados.
  
 ### 7.8 Exemplos de erro
  
@@ -373,7 +383,7 @@ O PCA da penúltima camada (128 neurônios) reduzido para 2 dimensões explica 1
     <sup>Fonte: Desenvolvido Através Google Colab</sup>
   </div>
 
-Os erros visíveis são majoritariamente casos genuinamente ambíguos — um 2 escrito com traço que lembra um 9, um 3 com curvatura que lembra um 2, um 7 estilizado que lembra um 2. Esses são erros que um humano poderia cometer sem contexto adicional, o que sugere que a rede atingiu um nível de desempenho próximo ao limite do que a arquitetura consegue extrair das features brutas de pixel.
+Os erros visíveis são majoritariamente casos genuinamente ambíguos, um 2 escrito com traço que lembra um 9, um 3 com curvatura que lembra um 2, um 7 estilizado que lembra um 2. Esses são erros que um humano poderia cometer sem contexto adicional, o que sugere que a rede atingiu um nível de desempenho próximo ao limite do que a arquitetura consegue extrair das features brutas de pixel.
  
  
 ## 8. Decisões e Dificuldades
